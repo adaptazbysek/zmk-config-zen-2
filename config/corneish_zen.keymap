@@ -37,10 +37,11 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
 //
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &none  &tog GAME
-   &none      &none        &none        &none        &none        &none          &none    &none    &none  &none     &none  &none 
-                          	        &kp LGUI     &none        &kp SPACE      &kp RET  &none    &kp RALT
+   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7    &kp N8    &kp N9    &kp N0 &kp BSPC
+   &kp LCTRL  &KP LCTRL    &kp LALT     &kp LGUI     &kp LSHFT    &none          &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none  &none
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp HOME &kp PG_DN &kp PG_UP &kp END   &none  &tog GAME
+   &none      &none        &none        &none        &none        &none          &none    &none     &none     &none   &none  &none
+                          	        &kp LGUI     &none        &kp SPACE      &kp RET  &none     &none
                         >;
                 };
 
@@ -63,11 +64,37 @@
                 game_layer {
                         label = "GAME";
                         bindings = <
-   &none     &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &none 
-   &none     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &tog GAME
-   &none     &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &none 
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &none
+   &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &tog GAME
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &none
                         &none  &none  &none  &none  &none  &none 
                         >;
+                };
+        };
+};
+
+/ {
+        combos {
+                compatible = "zmk,combos";
+                combo_csv {
+                        timeout-ms = <50>;
+                        key-positions = <C V>;
+                        bindings = <&kp LC(LS(V))>;
+                };
+                combo_csc {
+                        timeout-ms = <50>;
+                        key-positions = <Z X>;
+                        bindings = <&kp LC(LS(C))>;
+                };
+                combo_cv {
+                        timeout-ms = <50>;
+                        key-positions = <C V>;
+                        bindings = <&kp LC(V)>;
+                };
+                combo_cc {
+                        timeout-ms = <50>;
+                        key-positions = <Z X>;
+                        bindings = <&kp LC(C)>;
                 };
         };
 };
