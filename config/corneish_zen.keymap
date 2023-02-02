@@ -22,9 +22,9 @@
                         label = "COLEMAK";
                         bindings = <
    &kp GRAVE &kp Q       &kp W      &kp F      &kp P       &kp G        &kp J &kp L       &kp U      &kp Y      &kp SEMI    &kp MINUS
-   &kp LCTRL &mt LCTRL A &mt LALT R &mt LGUI S &mt LSHFT T &kp D        &kp H &mt RSHFT N &mt RGUI E &mt RALT I &mt RCTRL O &none
+   &kp LCTRL &mt LCTRL A &mt LALT R &mt LGUI S &mt LSHFT T &kp D        &kp H &mt RSHFT N &mt RGUI E &mt LALT I &mt RCTRL O &none
    &kp LPAR  &kp Z       &kp X      &kp C      &kp V       &kp B        &kp K &kp M       &kp COMMA  &kp DOT    &kp FSLH    &kp RPAR
-              &kp ESC  &mt NUMBER SPACE &kp TAB                                 &kp RET &mt SYMBOL BSPC &mt GAME DEL
+              &kp ESC  &lt NUMBER SPACE &kp TAB                                 &kp RET &lt SYMBOL BSPC &lt GAME DEL
                         >;
                 };
 
