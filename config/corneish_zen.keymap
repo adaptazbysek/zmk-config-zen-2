@@ -10,7 +10,9 @@
 };
 
 &mt {
-        tapping-term-ms = <300>;
+        flavor = "tap-preferred";
+        //tapping-term-ms = <300>;
+        //quick-tap-ms = <100>;
 };
 
 #define COLEMAK 0
@@ -18,7 +20,34 @@
 #define SYMBOL 2
 #define GAME 3
 
+z 26
+b 30
+
 / {
+        combos {
+                compatible = "zmk,combos";
+                combo_csv {
+                        timeout-ms = <50>;
+                        key-positions = <27 28 29>;
+                        bindings = <&kp LC(LS(V))>;
+                };
+                combo_csc {
+                        timeout-ms = <50>;
+                        key-positions = <26 27 28>;
+                        bindings = <&kp LC(LS(C))>;
+                };
+                combo_cv {
+                        timeout-ms = <50>;
+                        key-positions = <28 29>;
+                        bindings = <&kp LC(V)>;
+                };
+                combo_cc {
+                        timeout-ms = <50>;
+                        key-positions = <26 27>;
+                        bindings = <&kp LC(C)>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -76,29 +105,3 @@
                 };
         };
 };
-
-// {
-//        combos {
-//                compatible = "zmk,combos";
-//                combo_csv {
-//                        timeout-ms = <50>;
-//                        key-positions = <c v x>;
-//                        bindings = <&kp LC(LS(V))>;
-//                };
-//                combo_csc {
-//                        timeout-ms = <50>;
-//                        key-positions = <z x c>;
-//                        bindings = <&kp LC(LS(C))>;
-//                };
-//                combo_cv {
-//                        timeout-ms = <50>;
-//                        key-positions = <c v>;
-//                        bindings = <&kp LC(V)>;
-//                };
-//                combo_cc {
-//                        timeout-ms = <50>;
-//                        key-positions = <z x>;
-//                        bindings = <&kp LC(C)>;
-//                };
-//        };
-//};
