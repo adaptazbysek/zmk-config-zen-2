@@ -20,9 +20,6 @@
 #define SYMBOL 2
 #define GAME 3
 
-z 26
-b 30
-
 / {
         combos {
                 compatible = "zmk,combos";
