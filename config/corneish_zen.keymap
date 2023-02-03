@@ -10,7 +10,7 @@
 };
 
 &mt {
-        tapping-term-ms = <100>;
+        tapping-term-ms = <300>;
 };
 
 #define COLEMAK 0
@@ -82,22 +82,22 @@
                 compatible = "zmk,combos";
                 combo_csv {
                         timeout-ms = <50>;
-                        key-positions = <C V X>;
+                        key-positions = <c v x>;
                         bindings = <&kp LC(LS(V))>;
                 };
                 combo_csc {
                         timeout-ms = <50>;
-                        key-positions = <Z X C>;
+                        key-positions = <z x c>;
                         bindings = <&kp LC(LS(C))>;
                 };
                 combo_cv {
                         timeout-ms = <50>;
-                        key-positions = <C V>;
+                        key-positions = <c v>;
                         bindings = <&kp LC(V)>;
                 };
                 combo_cc {
                         timeout-ms = <50>;
-                        key-positions = <Z X>;
+                        key-positions = <z x>;
                         bindings = <&kp LC(C)>;
                 };
         };
