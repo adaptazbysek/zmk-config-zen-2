@@ -1,11 +1,15 @@
 manifest:
   remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: mouse
+      url-base: https://github.com/ftc/
   projects:
     - name: zmk
-      remote: caksoylar
-      revision: caksoylar/zen-v2
+      remote: mouse
+      revision: mouse-ftc
       import: app/west.yml
   self:
     path: config
