@@ -75,6 +75,7 @@
         euro: euro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            label = "EURO";
             bindings =
                 <&macro_press>,
                 <&kp LCTRL &kp LSHIFT>,
@@ -83,14 +84,7 @@
                 <&macro_release>,
                 <&kp LCTRL &kp LSHFT>,
                 <&macro_tap>,
-                <&kp NUMBER_2 &kp N0 &kp A &kp C &kp ENTER>;
-
-            label = "EURO";
-            bindings =
-                <&macro_press &kp LCTRL &kp LSHFT>,
-                <&macro_tap &kp U>,
-                <&macro_release &kp LCTRL &kp LSHFT>,
-                <&macro_tap &kp N2 &kp N0 &kp A &kp C &kp SPC>;
+                <&kp N2 &kp N0 &kp A &kp C &kp SPC>;
         };
     };
 
