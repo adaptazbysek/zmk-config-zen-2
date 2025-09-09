@@ -23,6 +23,7 @@
 #define COLEMAK 0
 #define NUMBER 1
 #define SYMBOL 2
+#define UNICODE 3
 
 / {
     combos {
@@ -80,6 +81,57 @@
         };
     };
 
+    macros {
+        // Special currency symbols
+        pound: pound {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(U)) &kp A &kp N3 &kp SPACE>;
+        };
+
+        euro: euro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(U)) &kp N2 &kp N0 &kp A &kp C &kp SPACE>;
+        };
+
+        // Czech lowercase vowels
+        a_acute: a_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp E &kp N1 &kp SPACE>; };
+        e_acute: e_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp E &kp N9 &kp SPACE>; };
+        e_caron: e_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N1 &kp B &kp SPACE>; };
+        i_acute: i_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp E &kp D &kp SPACE>; };
+        o_acute: o_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp F &kp N3 &kp SPACE>; };
+        u_acute: u_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp F &kp A &kp SPACE>; };
+        u_ring: u_ring { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp F &kp SPACE>; };
+
+        // Czech uppercase vowels
+        A_acute: A_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp C &kp N0 &kp SPACE>; };
+        E_acute: E_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp C &kp N9 &kp SPACE>; };
+        E_caron: E_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N1 &kp A &kp SPACE>; };
+        I_acute: I_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp C &kp D &kp SPACE>; };
+        O_acute: O_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp D &kp N3 &kp SPACE>; };
+        U_acute: U_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp D &kp A &kp SPACE>; };
+        U_ring: U_ring { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp E &kp SPACE>; };
+
+        // Czech lowercase consonants
+        c_caron: c_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N0 &kp D &kp SPACE>; };
+        d_caron: d_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N0 &kp F &kp SPACE>; };
+        n_caron: n_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N4 &kp N8 &kp SPACE>; };
+        r_caron: r_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N5 &kp N9 &kp SPACE>; };
+        s_caron: s_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N1 &kp SPACE>; };
+        t_caron: t_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N5 &kp SPACE>; };
+        z_caron: z_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N7 &kp E &kp SPACE>; };
+
+        // Czech uppercase consonants
+        C_caron: C_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N0 &kp C &kp SPACE>; };
+        D_caron: D_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N0 &kp E &kp SPACE>; };
+        N_caron: N_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N4 &kp N7 &kp SPACE>; };
+        R_caron: R_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N5 &kp N8 &kp SPACE>; };
+        S_caron: S_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N0 &kp SPACE>; };
+        T_caron: T_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N4 &kp SPACE>; };
+        Z_caron: Z_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N7 &kp D &kp SPACE>; };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -89,7 +141,7 @@
 &kp GRAVE  &kp Q        &kp W       &kp F       &kp P        &kp G        &kp J        &kp L        &kp U       &kp Y       &kp SEMI     &kp MINUS
 &kp LCTRL  &mt LCTRL A  &mt LALT R  &mt LGUI S  &mt LSHFT T  &kp D        &kp H        &mt RSHFT N  &mt RGUI E  &mt LALT I  &mt RCTRL O  &kp SQT
 &kp LPAR   &kp Z        &kp X       &kp C       &kp V        &kp B        &kp K        &kp M        &kp COMMA   &kp DOT     &kp FSLH     &kp RPAR
-                                    &kp ESC     &lt 1 SPACE  &kp TAB      &kp ENTER    &lt 2 BSPC   &kp DEL
+                                    &kp ESC     &lt 1 SPACE  &kp TAB      &kp ENTER    &lt 2 BSPC   &lt 3 DEL
             >;
         };
 
@@ -110,6 +162,16 @@
 &kp F11  &kp F1    &kp F2  &kp F3    &kp F4    &kp F5       &kp MINUS  &kp EQUAL  &kp LBRC  &kp RBRC  &kp PIPE  &kp GRAVE
 &kp F12  &kp F6    &kp F7  &kp F8    &kp F9    &kp F10      &kp UNDER  &kp PLUS   &kp LBKT  &kp RBKT  &kp BSLH  &kp TILDE
                            &none     &none     &none        &none      &none      &none
+            >;
+        };
+
+        unicode_layer {
+            label = "UNICODE";
+            bindings = <
+&trans     &trans     &euro      &trans      &trans      &trans         &trans     &pound     &mt u_ring U_ring    &trans     &trans     &trans
+&trans     &mt a_acute A_acute    &mt r_caron R_caron    &mt s_caron S_caron    &mt t_caron T_caron    &mt d_caron D_caron       &trans     &mt n_caron N_caron    &mt e_acute E_caron    &mt i_acute I_acute    &mt o_acute O_acute    &trans
+&kp LSHFT  &mt z_caron Z_caron    &trans     &mt c_caron C_caron    &trans     &trans         &trans     &trans     &trans               &trans     &trans     &kp RSHFT
+                                 &trans     &trans     &trans         &trans     &trans     &trans
             >;
         };
     };
