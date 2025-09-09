@@ -116,6 +116,23 @@
         s_caron: s_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N1 &kp SPACE>; };
         t_caron: t_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N5 &kp SPACE>; };
         z_caron: z_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N7 &kp E &kp SPACE>; };
+
+        // Czech uppercase characters (correct Unicode values)
+        A_acute: A_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp C &kp N1 &kp SPACE>; };  // Á
+        E_acute: E_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp C &kp N9 &kp SPACE>; };  // É
+        E_caron: E_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N1 &kp A &kp SPACE>; };  // Ě
+        I_acute: I_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp C &kp D &kp SPACE>; };  // Í
+        O_acute: O_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp D &kp N3 &kp SPACE>; };  // Ó
+        U_acute: U_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp D &kp A &kp SPACE>; };  // Ú
+        U_ring: U_ring { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp E &kp SPACE>; };  // Ů
+        Y_acute: Y_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp D &kp D &kp SPACE>; };  // Ý
+        C_caron: C_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N0 &kp C &kp SPACE>; };  // Č
+        D_caron: D_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N0 &kp E &kp SPACE>; };  // Ď
+        N_caron: N_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N4 &kp N7 &kp SPACE>; };  // Ň
+        R_caron: R_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N5 &kp N8 &kp SPACE>; };  // Ř
+        S_caron: S_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N0 &kp SPACE>; };  // Š
+        T_caron: T_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N4 &kp SPACE>; };  // Ť
+        Z_caron: Z_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N7 &kp D &kp SPACE>; };  // Ž
     };
 
     keymap {
@@ -164,10 +181,10 @@
         unicode_layer {
             label = "UNICODE";
             bindings = <
-&trans     &trans     &euro      &euro       &trans      &trans         &trans     &pound     &u_acute    &y_acute   &trans     &trans
-&trans     &a_acute   &r_caron   &s_caron    &t_caron    &d_caron       &trans     &n_caron   &e_acute    &i_acute   &o_acute   &trans
-&kp LSHFT  &z_caron   &trans     &c_caron    &trans      &trans         &trans     &trans     &trans      &trans     &trans     &kp RSHFT
-                                 &trans      &trans      &trans         &trans     &trans     &trans
+&trans                    &trans                    &euro                     &trans                    &trans                    &trans                       &trans                    &pound                    &mt u_ring u_acute         &mt Y_acute y_acute       &trans                    &trans
+&trans                    &mt A_acute a_acute       &mt R_caron r_caron       &mt S_caron s_caron       &mt T_caron t_caron       &mt D_caron d_caron          &trans                    &mt N_caron n_caron       &mt e_caron e_acute       &mt I_acute i_acute       &mt O_acute o_acute       &trans
+&kp LSHFT                 &mt Z_caron z_caron       &trans                    &mt C_caron c_caron       &trans                    &trans                       &trans                    &trans                    &trans                    &trans                    &trans                    &kp RSHFT
+                                                    &trans                    &trans                    &trans                       &trans                    &trans                    &trans
             >;
         };
     };

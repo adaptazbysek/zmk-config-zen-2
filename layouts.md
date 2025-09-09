@@ -9,8 +9,8 @@
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
 │  (  │  Z  │  X  │  C  │  V  │  B  │       │  K  │  M  │  ,  │  .  │  /  │  )  │
 └─────┴─────┴─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┴─────┴─────┘
-                  │Vol  │Num  │Mouse│       │Enter│Sym  │Uni  │
-                  │Esc  │Space│ Tab │       │     │Bksp │ Del │
+                  │ Esc │Num  │Mouse│       │Enter│Sym  │Uni  │
+                  │     │Space│ Tab │       │     │Bksp │ Del │
                   └─────┴─────┴─────┘       └─────┴─────┴─────┘
 ```
 
@@ -19,11 +19,10 @@
 - N/Shift, E/GUI, I/Alt, O/Ctrl (right hand)
 
 **Layer Access:**
-- Volume (3): Hold Esc
 - Number (1): Hold Space  
-- Mouse (4): Hold Tab
 - Symbol (2): Hold Backspace
-- Unicode (7): Hold Del
+- Mouse (3): Hold Tab
+- Unicode (4): Hold Del
 
 ---
 
@@ -34,7 +33,7 @@
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
 │CapW │Ctrl │ Alt │ GUI │Shift│     │       │  ←  │  ↓  │  ↑  │  →  │ Ins │PrtSc│
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│BTClr│ BT1 │ BT2 │ BT3 │ BT4 │ BT5 │       │Home │PgDn │PgUp │ End │     │Game │
+│BTClr│ BT1 │ BT2 │ BT3 │ BT4 │ BT5 │       │Home │PgDn │PgUp │ End │     │     │
 └─────┴─────┴─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┴─────┴─────┘
                   │     │     │     │       │     │     │     │
                   └─────┴─────┴─────┘       └─────┴─────┴─────┘
@@ -44,7 +43,6 @@
 - CapW: Caps Word (tap left pinkie)
 - BT1-5: Bluetooth device selection
 - BTClr: Clear Bluetooth bonds
-- Game: Toggle to gaming layer
 
 ---
 
@@ -63,22 +61,7 @@
 
 ---
 
-## Volume Layer (3)
-```
-┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│     │Mute │Vol- │Vol+ │Prev │Next │       │     │     │     │     │     │     │
-├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │     │     │     │     │     │       │Stop │Pause│Play │     │     │     │
-├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │     │     │     │     │     │       │     │     │     │     │     │     │
-└─────┴─────┴─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┴─────┴─────┘
-                  │     │     │     │       │     │     │     │
-                  └─────┴─────┴─────┘       └─────┴─────┴─────┘
-```
-
----
-
-## Mouse Layer (4)
+## Mouse Layer (3)
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
 │     │     │     │  ↑  │     │     │       │     │     │     │     │     │     │
@@ -92,30 +75,31 @@
 ```
 
 **Mouse Controls:**
-- Arrow keys: Mouse movement
-- LClk/RClk: Left/Right click
-- MClk: Middle click
+- Arrow keys: Mouse movement (WASD-style on FRST keys)
+- LClk/RClk: Left/Right click on home row
+- MClk: Middle click on thumb
 
 ---
 
-## Unicode Layer (7) - Czech Characters
+## Unicode Layer (4) - Czech Characters
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│     │     │  €  │     │     │     │       │     │  £  │ú/ů │     │     │     │
+│     │     │  €  │     │     │     │       │     │  £  │ú/ů │ ý   │     │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │á/Á │ř/Ř │š/Š │ť/Ť │ď/Ď │       │     │ň/Ň │é/ě │í/Í │ó/Ó │     │
+│     │ á   │ ř   │ š   │ ť   │ ď   │       │     │ ň   │é/ě │ í   │ ó   │     │
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│Shift│ž/Ž │     │č/Č │     │     │       │     │     │     │     │     │Shift│
+│Shift│ ž   │     │ č   │     │     │       │     │     │     │     │     │Shift│
 └─────┴─────┴─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┴─────┴─────┘
                   │     │     │     │       │     │     │     │
                   └─────┴─────┴─────┘       └─────┴─────┴─────┘
 ```
 
 **Czech Characters:**
-- Tap: lowercase (á, ř, š, etc.)
-- Hold: uppercase (Á, Ř, Š, etc.)
-- Special: é (tap) / ě (hold), ú (tap) / ů (hold)
-- Shift keys in corners for additional capitals
+- **Vowels**: á, é, ě, í, ó, ú, ů, ý
+- **Consonants**: č, ď, ň, ř, š, ť, ž
+- **Special**: é (tap) / ě (hold), ú (tap) / ů (hold)
+- **Capitals**: Hold Shift + tap letter (Linux Unicode input handles capitalization)
+- **Currency**: € (euro) on W, £ (pound) on L
 
 ---
 
@@ -147,60 +131,48 @@ Home Row: A  R  S  T  D     H  N  E  I  O
          ┌─┬─┐                    ┌─┬─┐
          │A│R│ = Tile Window ←    │I│O│ = Tile Window →
          └─┴─┘                    └─┴─┘
-
-Bottom Row: , .
-           ┌─┬─┐
-           │,│.│ = Night Light Toggle
-           └─┴─┘
 ```
 
----
-
-## Gaming Layers
-
-### Game Layer (5) - QWERTY
-```
-┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│ Tab │  Q  │  W  │  E  │  R  │  T  │       │  Y  │  U  │  I  │  O  │  P  │     │
-├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│Shift│  A  │  S  │  D  │  F  │  G  │       │  H  │  J  │  K  │  L  │  ;  │Exit │
-├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│Ctrl │  Z  │  X  │  C  │  V  │  B  │       │  N  │  M  │  ,  │  .  │  /  │     │
-└─────┴─────┴─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┴─────┴─────┘
-                  │ Esc │Space│GNum │       │Enter│     │     │
-                  └─────┴─────┴─────┘       └─────┴─────┴─────┘
-```
-
-### Game Numbers Layer (6)
-```
-┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
-│ Tab │  1  │  2  │  3  │  4  │  5  │       │  Y  │  U  │  ↑  │  O  │  P  │     │
-├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│Shift│  A  │  S  │  D  │  F  │  G  │       │  H  │  ←  │  ↓  │  →  │  ;  │     │
-├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
-│     │     │     │     │     │     │       │     │     │     │     │     │     │
-└─────┴─────┴─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┴─────┴─────┘
-                  │     │     │     │       │     │     │     │
-                  └─────┴─────┴─────┘       └─────┴─────┴─────┘
-```
+**All combos use 75ms timeout for reliability**
 
 ---
 
 ## Quick Reference
 
 **Layer Access:**
-- Hold Esc → Volume/Media
-- Hold Space → Numbers/Navigation  
-- Hold Tab → Mouse
+- Hold Space → Numbers/Navigation/Bluetooth
 - Hold Backspace → Symbols/F-keys
-- Hold Del → Czech Unicode
+- Hold Tab → Mouse Control
+- Hold Del → Czech Unicode Characters
 
 **Special Features:**
-- Caps Word: Number layer + left pinkie
-- Gaming: Number layer + right pinkie
-- Bluetooth: Number layer + bottom row
+- **Caps Word**: Number layer + left pinkie (A key)
+- **Home Row Mods**: Tap for letter, hold for modifier
+- **Debounce Settings**: Optimized to prevent double-taps
+- **Bluetooth**: Number layer + bottom row (BT1-5, Clear)
 
 **Czech Typing:**
 1. Hold Del for Unicode layer
-2. Tap for lowercase, hold for uppercase
-3. Use corner Shift keys for additional capitals
+2. Tap for lowercase, Shift+tap for uppercase
+3. Special: é/ě on E key, ú/ů on U key
+4. All Czech letters: á é ě í ó ú ů ý č ď ň ř š ť ž
+
+**GNOME Integration:**
+- S+T / N+E: Switch workspaces
+- A+R / I+O: Tile windows left/right
+- Z+X / C+V: Copy/paste with combos
+
+---
+
+## Hardware Notes
+
+**Debounce Settings:**
+- Press: 1ms (faster response)
+- Release: 7ms (prevents double-taps)
+
+**Mod-Tap Timing:**
+- Tapping term: 280ms
+- Quick tap: 200ms
+- Prior idle: 150ms (prevents accidental mods)
+
+**Combo Timeout:** 75ms (reliable but not too slow)
