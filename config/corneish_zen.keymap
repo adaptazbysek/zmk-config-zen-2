@@ -60,26 +60,26 @@
         // GNOME workspace navigation
         combo_workspace_left {
             timeout-ms = <75>;
-            key-positions = <13 14>;  // S+T (home row)
+            key-positions = <3 4>;  // F+P (top row)
             bindings = <&kp LC(LA(LEFT))>;  // Ctrl+Alt+Left
         };
 
         combo_workspace_right {
             timeout-ms = <75>;
-            key-positions = <19 20>;  // N+E (home row)
+            key-positions = <7 8>;  // L+U (top row)
             bindings = <&kp LC(LA(RIGHT))>;  // Ctrl+Alt+Right
         };
 
         // Window tiling
         combo_tile_left {
             timeout-ms = <75>;
-            key-positions = <12 13>;  // A+R (left home row)
+            key-positions = <1 2>;  // Q+W (left top row)
             bindings = <&kp LS(LG(LEFT))>;  // Super+Shift+Left
         };
 
         combo_tile_right {
             timeout-ms = <75>;
-            key-positions = <20 21>;  // I+O (right home row)
+            key-positions = <9 10>;  // U+Y (right top row)
             bindings = <&kp LS(LG(RIGHT))>;  // Super+Shift+Right
         };
     };
@@ -164,11 +164,11 @@
         unicode_layer {
             label = "UNICODE";
             bindings = <
-&trans     &trans     &euro      &trans      &trans      &trans         &trans     &pound     &u_acute    &y_acute   &trans     &trans
+&trans     &trans     &euro      &euro       &trans      &trans         &trans     &pound     &u_acute    &y_acute   &trans     &trans
 &trans     &a_acute   &r_caron   &s_caron    &t_caron    &d_caron       &trans     &n_caron   &e_acute    &i_acute   &o_acute   &trans
 &kp LSHFT  &z_caron   &trans     &c_caron    &trans      &trans         &trans     &trans     &trans      &trans     &trans     &kp RSHFT
                                  &trans      &trans      &trans         &trans     &trans     &trans
             >;
         };
-    };
+    }
 };
