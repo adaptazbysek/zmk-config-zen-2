@@ -52,6 +52,32 @@
             key-positions = <26 27 28>;  // X+C+V
             bindings = <&kp LC(LS(V))>;  // Ctrl+Shift+V (paste without formatting)
         };
+
+        // GNOME workspace navigation
+        combo_workspace_left {
+            timeout-ms = <75>;
+            key-positions = <13 14>;  // S+T (home row)
+            bindings = <&kp LC(LA(LEFT))>;  // Ctrl+Alt+Left
+        };
+
+        combo_workspace_right {
+            timeout-ms = <75>;
+            key-positions = <19 20>;  // N+E (home row)
+            bindings = <&kp LC(LA(RIGHT))>;  // Ctrl+Alt+Right
+        };
+
+        // Window tiling
+        combo_tile_left {
+            timeout-ms = <75>;
+            key-positions = <12 13>;  // A+R (left home row)
+            bindings = <&kp LS(LG(LEFT))>;  // Super+Shift+Left
+        };
+
+        combo_tile_right {
+            timeout-ms = <75>;
+            key-positions = <20 21>;  // I+O (right home row)
+            bindings = <&kp LS(LG(RIGHT))>;  // Super+Shift+Right
+        };
     };
 
     keymap {
