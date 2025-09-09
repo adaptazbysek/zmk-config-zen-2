@@ -9,8 +9,8 @@
 ├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
 │  (  │  Z  │  X  │  C  │  V  │  B  │       │  K  │  M  │  ,  │  .  │  /  │  )  │
 └─────┴─────┴─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┴─────┴─────┘
-                  │ Esc │Num  │Mouse│       │Enter│Sym  │Uni  │
-                  │     │Space│ Tab │       │     │Bksp │ Del │
+                  │Vol  │Num  │Mouse│       │Enter│Sym  │Uni  │
+                  │ Esc │Space│ Tab │       │     │Bksp │ Del │
                   └─────┴─────┴─────┘       └─────┴─────┴─────┘
 ```
 
@@ -21,8 +21,9 @@
 **Layer Access:**
 - Number (1): Hold Space  
 - Symbol (2): Hold Backspace
-- Mouse (3): Hold Tab
-- Unicode (4): Hold Del
+- Volume (3): Hold Esc
+- Mouse (4): Hold Tab
+- Unicode (5): Hold Del
 
 ---
 
@@ -61,7 +62,26 @@
 
 ---
 
-## Mouse Layer (3)
+## Volume Layer (3)
+```
+┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
+│     │Mute │Vol- │Vol+ │Prev │Next │       │     │     │     │     │     │     │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │     │       │Stop │Pause│Play │     │     │     │
+├─────┼─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┼─────┤
+│     │     │     │     │     │     │       │     │     │     │     │     │     │
+└─────┴─────┴─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┴─────┴─────┘
+                  │     │     │     │       │     │     │     │
+                  └─────┴─────┴─────┘       └─────┴─────┴─────┘
+```
+
+**Media Controls:**
+- Mute, Volume Down/Up, Previous/Next Track
+- Stop, Play/Pause, Play
+
+---
+
+## Mouse Layer (4)
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
 │     │     │     │  ↑  │     │     │       │     │     │     │     │     │     │
@@ -81,7 +101,7 @@
 
 ---
 
-## Unicode Layer (4) - Czech Characters
+## Unicode Layer (5) - Czech Characters
 ```
 ┌─────┬─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┬─────┐
 │     │     │  €  │     │     │     │       │     │  £  │ú/ů │ ý   │     │     │
@@ -97,8 +117,7 @@
 **Czech Characters:**
 - **Vowels**: á, é, ě, í, ó, ú, ů, ý
 - **Consonants**: č, ď, ň, ř, š, ť, ž
-- **Special**: é (tap) / ě (hold), ú (tap) / ů (hold)
-- **Capitals**: Hold Shift + tap letter (Linux Unicode input handles capitalization)
+- **All lowercase only** - use regular Caps Lock or Shift for capitals when needed
 - **Currency**: € (euro) on W, £ (pound) on L
 
 ---
@@ -124,22 +143,28 @@ Bottom Row: Z  X  C  V  B
 
 ### GNOME Shortcuts
 ```
-Home Row: A  R  S  T  D     H  N  E  I  O
-         ┌─┬─┐                 ┌─┬─┐
-         │S│T│ = Workspace ←   │N│E│ = Workspace →
-         └─┴─┘                 └─┴─┘
-         ┌─┬─┐                    ┌─┬─┐
-         │A│R│ = Tile Window ←    │I│O│ = Tile Window →
-         └─┴─┘                    └─┴─┘
+Top Row: Q  W  F  P  G     J  L  U  Y  ;
+        ┌─┬─┐             ┌─┬─┐
+        │Q│W│ = Tile ←    │F│P│ = Workspace ←
+        └─┴─┘             └─┴─┘
+                          ┌─┬─┐
+                          │L│U│ = Workspace →
+                          └─┴─┘
+                             ┌─┬─┐
+                             │U│Y│ = Tile →
+                             └─┴─┘
 ```
 
-**All combos use 75ms timeout for reliability**
+**Combo Timeouts:**
+- Copy/paste: 30ms (fast for frequent use)
+- GNOME shortcuts: 25ms (very fast, moved to top row to avoid typing conflicts)
 
 ---
 
 ## Quick Reference
 
 **Layer Access:**
+- Hold Esc → Volume/Media Controls
 - Hold Space → Numbers/Navigation/Bluetooth
 - Hold Backspace → Symbols/F-keys
 - Hold Tab → Mouse Control
