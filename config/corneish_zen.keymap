@@ -25,6 +25,35 @@
 #define SYMBOL 2
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        // Copy/paste combos (bottom row)
+        combo_cc {
+            timeout-ms = <75>;
+            key-positions = <25 26>;  // Z+X
+            bindings = <&kp LC(C)>;  // Ctrl+C (copy)
+        };
+
+        combo_cv {
+            timeout-ms = <75>;
+            key-positions = <27 28>;  // C+V
+            bindings = <&kp LC(V)>;  // Ctrl+V (paste)
+        };
+
+        combo_csc {
+            timeout-ms = <75>;
+            key-positions = <25 26 27>;  // Z+X+C
+            bindings = <&kp LC(LS(C))>;  // Ctrl+Shift+C (copy with formatting)
+        };
+
+        combo_csv {
+            timeout-ms = <75>;
+            key-positions = <26 27 28>;  // X+C+V
+            bindings = <&kp LC(LS(V))>;  // Ctrl+Shift+V (paste without formatting)
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
