@@ -156,7 +156,7 @@
             label = "VOLUME";
             bindings = <
 &none     &kp K_MUTE  &kp K_VOL_DN  &kp K_VOL_UP  &kp K_PREV  &kp K_NEXT    &none        &none        &none        &none        &none        &none
-&none     &none       &none         &none         &none       &none         &kp K_STOP   &kp K_PP     &kp K_PLAY   &none        &none        &none
+&none     &none       &none         &none         &none       &none         &none        &none        &none        &none        &none        &none
 &none     &none       &none         &none         &none       &none         &none        &none        &none        &none        &none        &none
                                     &none         &none       &none         &none        &none        &none
             >;
