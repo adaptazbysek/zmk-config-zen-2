@@ -10,9 +10,9 @@
 
 &mt {
     flavor = "tap-preferred";
-    quick-tap-ms = <200>;
-    tapping-term-ms = <280>;
-    require-prior-idle-ms = <150>;
+    quick-tap-ms = <175>;
+    tapping-term-ms = <200>;
+    require-prior-idle-ms = <125>;
 };
 
 &lt {
@@ -34,51 +34,51 @@
 
         // Copy/paste combos (bottom row)
         combo_cc {
-            timeout-ms = <75>;
+            timeout-ms = <30>;
             key-positions = <25 26>;  // Z+X
             bindings = <&kp LC(C)>;  // Ctrl+C (copy)
         };
 
         combo_cv {
-            timeout-ms = <75>;
+            timeout-ms = <30>;
             key-positions = <27 28>;  // C+V
             bindings = <&kp LC(V)>;  // Ctrl+V (paste)
         };
 
         combo_csc {
-            timeout-ms = <75>;
+            timeout-ms = <30>;
             key-positions = <25 26 27>;  // Z+X+C
             bindings = <&kp LC(LS(C))>;  // Ctrl+Shift+C (copy with formatting)
         };
 
         combo_csv {
-            timeout-ms = <75>;
+            timeout-ms = <30>;
             key-positions = <26 27 28>;  // X+C+V
             bindings = <&kp LC(LS(V))>;  // Ctrl+Shift+V (paste without formatting)
         };
 
         // GNOME workspace navigation
         combo_workspace_left {
-            timeout-ms = <75>;
+            timeout-ms = <25>;
             key-positions = <3 4>;  // F+P (top row)
             bindings = <&kp LC(LA(LEFT))>;  // Ctrl+Alt+Left
         };
 
         combo_workspace_right {
-            timeout-ms = <75>;
+            timeout-ms = <25>;
             key-positions = <7 8>;  // L+U (top row)
             bindings = <&kp LC(LA(RIGHT))>;  // Ctrl+Alt+Right
         };
 
         // Window tiling
         combo_tile_left {
-            timeout-ms = <75>;
+            timeout-ms = <25>;
             key-positions = <1 2>;  // Q+W (left top row)
             bindings = <&kp LS(LG(LEFT))>;  // Super+Shift+Left
         };
 
         combo_tile_right {
-            timeout-ms = <75>;
+            timeout-ms = <25>;
             key-positions = <9 10>;  // U+Y (right top row)
             bindings = <&kp LS(LG(RIGHT))>;  // Super+Shift+Right
         };
@@ -170,5 +170,5 @@
                                  &trans      &trans      &trans         &trans     &trans     &trans
             >;
         };
-    }
+    };
 };
