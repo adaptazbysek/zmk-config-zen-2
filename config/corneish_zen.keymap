@@ -77,14 +77,14 @@
         combo_tile_left {
             timeout-ms = <50>;
             key-positions = <12 13>;  // A+R (left home row)
-            bindings = <&kp LG(LS(LEFT))>;  // Super+Shift+Left
+            bindings = <&kp LS(LG(LEFT))>;  // Super+Shift+Left
         };
 
         // Window tiling - Right half
         combo_tile_right {
             timeout-ms = <50>;
             key-positions = <20 21>;  // I+O (right home row)
-            bindings = <&kp LG(LS(RIGHT))>;  // Super+Shift+Right
+            bindings = <&kp LS(LG(RIGHT))>;  // Super+Shift+Right
         };
     };
 
@@ -215,10 +215,10 @@
         unicode_layer {
             label = "UNICODE";
             bindings = <
-&trans                    &trans                    &euro                     &trans                    &trans                    &trans                       &trans                    &pound                    &mt U_ring u_ring         &trans                    &trans                    &trans
-&trans                    &mt A_acute a_acute       &mt R_caron r_caron       &mt S_caron s_caron       &mt T_caron t_caron       &mt D_caron d_caron          &trans                    &mt N_caron n_caron       &mt E_caron e_acute       &mt I_acute i_acute       &mt O_acute o_acute       &trans
-&kp LSHFT                 &mt Z_caron z_caron       &trans                    &mt C_caron c_caron       &trans                    &trans                       &trans                    &trans                    &trans                    &trans                    &trans                    &kp RSHFT
-                                                    &trans                    &trans                    &trans                       &trans                    &trans                    &trans
+&trans     &trans     &euro      &trans      &trans      &trans         &trans     &pound     &mt u_ring U_ring    &trans     &trans     &trans
+&trans     &mt a_acute A_acute    &mt r_caron R_caron    &mt s_caron S_caron    &mt t_caron T_caron    &mt d_caron D_caron       &trans     &mt n_caron N_caron    &mt e_acute E_caron    &mt i_acute I_acute    &mt o_acute O_acute    &trans
+&kp LSHFT  &mt z_caron Z_caron    &trans     &mt c_caron C_caron    &trans     &trans         &trans     &trans     &trans               &trans     &trans     &kp RSHFT
+                                 &trans     &trans     &trans         &trans     &trans     &trans
             >;
         };
     };
