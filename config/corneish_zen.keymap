@@ -11,11 +11,15 @@
 &mt {
     flavor = "tap-preferred";
     quick-tap-ms = <200>;
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <150>;
 };
 
 &lt {
     flavor = "tap-preferred";
     quick-tap-ms = <200>;
+    tapping-term-ms = <280>;
+    require-prior-idle-ms = <150>;
 };
 
 #define COLEMAK 0
@@ -31,61 +35,108 @@
     combos {
         compatible = "zmk,combos";
 
+        // Copy/paste combos (bottom row)
         combo_csv {
             timeout-ms = <50>;
-            key-positions = <26 27 28>;
-            bindings = <&kp LC(LS(V))>;
+            key-positions = <26 27 28>;  // X+C+V
+            bindings = <&kp LC(LS(V))>;  // Ctrl+Shift+V (paste without formatting)
         };
 
         combo_csc {
             timeout-ms = <50>;
-            key-positions = <25 26 27>;
-            bindings = <&kp LC(LS(C))>;
+            key-positions = <25 26 27>;  // Z+X+C
+            bindings = <&kp LC(LS(C))>;  // Ctrl+Shift+C (copy with formatting)
         };
 
         combo_cv {
             timeout-ms = <50>;
-            key-positions = <27 28>;
-            bindings = <&kp LC(V)>;
+            key-positions = <27 28>;  // C+V
+            bindings = <&kp LC(V)>;  // Ctrl+V (paste)
         };
 
         combo_cc {
             timeout-ms = <50>;
-            key-positions = <25 26>;
-            bindings = <&kp LC(C)>;
+            key-positions = <25 26>;  // Z+X
+            bindings = <&kp LC(C)>;  // Ctrl+C (copy)
+        };
+
+        // GNOME workspace navigation
+        combo_workspace_left {
+            timeout-ms = <50>;
+            key-positions = <13 14>;  // S+T (home row)
+            bindings = <&kp LC(LA(LEFT))>;  // Ctrl+Alt+Left
+        };
+
+        combo_workspace_right {
+            timeout-ms = <50>;
+            key-positions = <19 20>;  // N+E (home row)
+            bindings = <&kp LC(LA(RIGHT))>;  // Ctrl+Alt+Right
+        };
+
+        // Window tiling - Left half
+        combo_tile_left {
+            timeout-ms = <50>;
+            key-positions = <12 13>;  // A+R (left home row)
+            bindings = <&kp LG(LS(LEFT))>;  // Super+Shift+Left
+        };
+
+        // Window tiling - Right half
+        combo_tile_right {
+            timeout-ms = <50>;
+            key-positions = <20 21>;  // I+O (right home row)
+            bindings = <&kp LG(LS(RIGHT))>;  // Super+Shift+Right
         };
     };
 
     macros {
-        pound: pound {
+        // Special currency symbols
+        pound: pound {  // £ (British Pound) - Unicode U+00A3
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            label = "POUND";
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL &kp LSHFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LCTRL &kp LSHFT>,
-                <&macro_tap>,
-                <&kp N0 &kp N0 &kp A &kp N3 &kp SPC>;
+            bindings = <&kp LC(LS(U)) &kp A &kp N3 &kp SPACE>;
         };
 
-        euro: euro {
+        euro: euro {  // € (Euro) - Unicode U+20AC
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            label = "EURO";
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL &kp LSHIFT>,
-                <&macro_tap>,
-                <&kp U>,
-                <&macro_release>,
-                <&kp LCTRL &kp LSHFT>,
-                <&macro_tap>,
-                <&kp N2 &kp N0 &kp A &kp C &kp SPC>;
+            bindings = <&kp LC(LS(U)) &kp N2 &kp N0 &kp A &kp C &kp SPACE>;
         };
+
+        // Czech lowercase vowels with accents
+        a_acute: a_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp E &kp N1 &kp SPACE>; };  // á - Unicode U+00E1
+        e_acute: e_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp E &kp N9 &kp SPACE>; };  // é - Unicode U+00E9
+        e_caron: e_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N1 &kp B &kp SPACE>; };  // ě - Unicode U+011B
+        i_acute: i_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp E &kp D &kp SPACE>; };  // í - Unicode U+00ED
+        o_acute: o_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp F &kp N3 &kp SPACE>; };  // ó - Unicode U+00F3
+        u_acute: u_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp F &kp A &kp SPACE>; };  // ú - Unicode U+00FA
+        u_ring: u_ring { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp F &kp SPACE>; };  // ů - Unicode U+016F
+
+        // Czech uppercase vowels with accents
+        A_acute: A_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp C &kp N0 &kp SPACE>; };  // Á - Unicode U+00C0
+        E_acute: E_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp C &kp N9 &kp SPACE>; };  // É - Unicode U+00C9
+        E_caron: E_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N1 &kp A &kp SPACE>; };  // Ě - Unicode U+011A
+        I_acute: I_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp C &kp D &kp SPACE>; };  // Í - Unicode U+00CD
+        O_acute: O_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp D &kp N3 &kp SPACE>; };  // Ó - Unicode U+00D3
+        U_acute: U_acute { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp D &kp A &kp SPACE>; };  // Ú - Unicode U+00DA
+        U_ring: U_ring { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp E &kp SPACE>; };  // Ů - Unicode U+016E
+
+        // Czech lowercase consonants with caron (háček)
+        c_caron: c_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N0 &kp D &kp SPACE>; };  // č - Unicode U+010D
+        d_caron: d_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N0 &kp F &kp SPACE>; };  // ď - Unicode U+010F
+        n_caron: n_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N4 &kp N8 &kp SPACE>; };  // ň - Unicode U+0148
+        r_caron: r_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N5 &kp N9 &kp SPACE>; };  // ř - Unicode U+0159
+        s_caron: s_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N1 &kp SPACE>; };  // š - Unicode U+0161
+        t_caron: t_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N5 &kp SPACE>; };  // ť - Unicode U+0165
+        z_caron: z_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N7 &kp E &kp SPACE>; };  // ž - Unicode U+017E
+
+        // Czech uppercase consonants with caron (háček)
+        C_caron: C_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N0 &kp C &kp SPACE>; };  // Č - Unicode U+010C
+        D_caron: D_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N0 &kp E &kp SPACE>; };  // Ď - Unicode U+010E
+        N_caron: N_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N4 &kp N7 &kp SPACE>; };  // Ň - Unicode U+0147
+        R_caron: R_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N5 &kp N8 &kp SPACE>; };  // Ř - Unicode U+0158
+        S_caron: S_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N0 &kp SPACE>; };  // Š - Unicode U+0160
+        T_caron: T_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N6 &kp N4 &kp SPACE>; };  // Ť - Unicode U+0164
+        Z_caron: Z_caron { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp LC(LS(U)) &kp N1 &kp N7 &kp D &kp SPACE>; };  // Ž - Unicode U+017D
     };
 
     keymap {
@@ -97,7 +148,7 @@
 &kp GRAVE  &kp Q        &kp W       &kp F       &kp P        &kp G        &kp J        &kp L        &kp U       &kp Y       &kp SEMI     &kp MINUS
 &kp LCTRL  &mt LCTRL A  &mt LALT R  &mt LGUI S  &mt LSHFT T  &kp D        &kp H        &mt RSHFT N  &mt RGUI E  &mt LALT I  &mt RCTRL O  &kp SQT
 &kp LPAR   &kp Z        &kp X       &kp C       &kp V        &kp B        &kp K        &kp M        &kp COMMA   &kp DOT     &kp FSLH     &kp RPAR
-                                    &lt 3 ESC   &lt 1 SPACE  &lt 4 TAB    &lt 0 ENTER  &lt 2 BSPC   &lt 5 DEL
+                                    &lt 3 ESC   &lt 1 SPACE  &lt 4 TAB    &lt 0 ENTER  &lt 2 BSPC   &lt 7 DEL
             >;
         };
 
@@ -105,7 +156,7 @@
             label = "NUMBER";
             bindings = <
 &kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7     &kp N8     &kp N9     &kp N0   &kp BSPC
-&kp LCTRL   &kp LCTRL     &kp LALT      &kp LGUI      &kp LSHFT     &none           &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp INS  &kp PRINTSCREEN
+&caps_word  &kp LCTRL     &kp LALT      &kp LGUI      &kp LSHFT     &none           &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp INS  &kp PRINTSCREEN
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none    &tog 5
                                         &none         &none         &none           &none     &none      &none
             >;
@@ -124,10 +175,10 @@
         volume_layer {
             label = "VOLUME";
             bindings = <
-&none  &kp K_MUTE  &kp K_VOL_DN  &kp K_VOL_UP  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none       &none         &none         &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none       &none         &none         &none  &none    &none  &none  &none  &none  &none  &none
-                                 &none         &none  &none    &none  &none  &none
+&none     &kp K_MUTE  &kp K_VOL_DN  &kp K_VOL_UP  &kp K_PREV  &kp K_NEXT    &none        &none        &none        &none        &none        &none
+&none     &none       &none         &none         &none       &none         &kp K_STOP   &kp K_PP     &kp K_PLAY   &none        &none        &none
+&none     &none       &none         &none         &none       &none         &none        &none        &none        &none        &none        &none
+                                    &none         &none       &none         &none        &none        &none
             >;
         };
 
@@ -157,17 +208,17 @@
 &kp TAB    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp Y   &kp U     &kp UP    &kp O      &kp P     &none
 &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G     &kp H   &kp LEFT  &kp DOWN  &kp RIGHT  &kp SEMI  &none
 &trans     &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans     &trans    &none
-                           &none   &none   &none     &none   &none
+                           &none   &none   &none     &none   &none     &none
             >;
         };
 
         unicode_layer {
             label = "UNICODE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &pound  &trans  &trans  &trans  &trans
-&trans  &trans  &euro   &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans                    &trans                    &euro                     &trans                    &trans                    &trans                       &trans                    &pound                    &mt U_ring u_ring         &trans                    &trans                    &trans
+&trans                    &mt A_acute a_acute       &mt R_caron r_caron       &mt S_caron s_caron       &mt T_caron t_caron       &mt D_caron d_caron          &trans                    &mt N_caron n_caron       &mt E_caron e_acute       &mt I_acute i_acute       &mt O_acute o_acute       &trans
+&kp LSHFT                 &mt Z_caron z_caron       &trans                    &mt C_caron c_caron       &trans                    &trans                       &trans                    &trans                    &trans                    &trans                    &trans                    &kp RSHFT
+                                                    &trans                    &trans                    &trans                       &trans                    &trans                    &trans
             >;
         };
     };
