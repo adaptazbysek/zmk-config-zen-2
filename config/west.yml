@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/petejohanson
   projects:
     - name: zmk
-      remote: caksoylar
-      revision: caksoylar/zen-v1+v2+experimental
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
   self:
     path: config
