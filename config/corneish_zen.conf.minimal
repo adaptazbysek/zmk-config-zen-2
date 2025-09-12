@@ -1,2 +1,0 @@
-# Minimal configuration for testing
-CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=3600000
