@@ -182,4 +182,9 @@
             >;
         };
     };
+
+    // Display configuration
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+    };
 };
