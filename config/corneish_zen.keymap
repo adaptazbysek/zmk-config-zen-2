@@ -16,10 +16,10 @@
 };
 
 &lt {
-    flavor = "tap-preferred";
-    quick-tap-ms = <175>;
-    tapping-term-ms = <200>;
-    require-prior-idle-ms = <125>;
+    flavor = "hold-preferred";
+    quick-tap-ms = <100>;
+    tapping-term-ms = <150>;
+    require-prior-idle-ms = <50>;
 };
 
 #define COLEMAK 0
